@@ -3,3 +3,4 @@ loguru
 typer
 rich
 python-dotenv
+questionary

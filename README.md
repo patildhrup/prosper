@@ -3,9 +3,10 @@
 A robust Python CLI tool for placing orders on the Binance Futures Testnet (USDT-M) with enhanced UI, logging, and error handling.
 
 ## Features
+- **Interactive Mode**: User-friendly menu-driven interface that stays open for multiple orders.
 - **Order Types**: Support for `MARKET`, `LIMIT`, and `STOP_MARKET` (Bonus).
 - **Sides**: `BUY` and `SELL`.
-- **UI**: Premium CLI experience using `Rich` for tables, panels, and status spinners.
+- **UI**: Premium CLI experience using `Rich` and `Questionary`.
 - **Logging**: Comprehensive logging of API requests, responses, and errors to `logs/trading.log`.
 - **Validation**: Robust input validation for symbol, side, and order-specific parameters.
 
@@ -16,44 +17,46 @@ A robust Python CLI tool for placing orders on the Binance Futures Testnet (USDT
 - Binance Futures Testnet API Key and Secret Key.
 
 ### 2. Installation
-Clone the repository and install dependencies:
+Install dependencies:
 ```bash
 pip install -r requirements.txt
 ```
 
 ### 3. Environment Configuration
-Create a `.env` file in the root directory and add your credentials:
+Create a `.env` file in the `Trading-Bot/` directory and add your credentials:
 ```env
 BINANCE_API_KEY=your_testnet_api_key
 BINANCE_SECRET_KEY=your_testnet_secret_key
-# Optional: Override base URL if needed
 # BASE_URL=https://testnet.binancefuture.com
 ```
 
 ## How to Run
-Use the `cli.py` script to place orders.
 
-### Place a MARKET Order
+### Interactive Mode (Recommended for non-technical users)
+Simply run the script without any arguments. It will guide you through the process and stay open until you choose to exit.
 ```bash
-python cli.py --symbol BTCUSDT --side BUY --type MARKET --qty 0.001
+python cli.py
 ```
 
-### Place a LIMIT Order
+### Command Line Mode (For technical users/scripts)
+Place a one-off order using flags:
 ```bash
-python cli.py --symbol BTCUSDT --side SELL --type LIMIT --qty 0.001 --price 60000
-```
+# MARKET Order
+python cli.py --symbol BTCUSDT --side BUY --type MARKET --qty 0.1
 
-### Place a STOP_MARKET Order (Bonus)
-```bash
-python cli.py --symbol BTCUSDT --side SELL --type STOP_MARKET --qty 0.001 --stop 55000
+# LIMIT Order
+python cli.py --symbol BTCUSDT --side SELL --type LIMIT --qty 0.1 --price 150000
+
+# STOP_MARKET Order
+python cli.py --symbol BTCUSDT --side SELL --type STOP_MARKET --qty 0.1 --stop 50000
 ```
 
 ## Implementation Details
+- **Main Loop**: The interactive mode uses a `while True` loop to allow continuous execution.
 - **Architecture**: Separated into `Bot/` (API logic & config) and `cli.py` (CLI interface).
-- **Logging**: Powered by `loguru`. Logs are stored in the `logs/` directory with automatic rotation.
-- **Error Handling**: Handles Binance API exceptions, network issues, and invalid user inputs with clear feedback.
+- **Logging**: Powered by `loguru`. Logs are stored in the `logs/` directory.
+- **Error Handling**: Handles Binance API exceptions and invalid user inputs with clear feedback.
 
 ## Assumptions
-- The bot assumes the user has sufficient margin/balance in their Testnet account.
 - Symbols should be provided in standard Binance format (e.g., `BTCUSDT`).
-- Quantity and Price must be valid for the specific symbol's filters (precision, min/max).
+- Quantity and Price must be valid for the specific symbol's filters (notional >= 5.0, etc.).

@@ -45,3 +45,21 @@ def place_order(client, symbol, side, order_type, quantity, price=None, stop_pri
     except Exception as e:
         logger.error(f"Unexpected Error: {str(e)}")
         raise
+
+def get_futures_balance(client):
+    """
+    Fetches the USDT balance from Binance Futures Testnet.
+    """
+    try:
+        logger.info("Fetching futures account balance")
+        balances = client.futures_account_balance()
+        usdt_balance = next((item for item in balances if item["asset"] == "USDT"), None)
+        
+        if usdt_balance:
+            logger.info(f"Balance Fetched | USDT: {usdt_balance['balance']}")
+            return usdt_balance
+        return None
+
+    except Exception as e:
+        logger.error(f"Failed to fetch balance: {str(e)}")
+        raise

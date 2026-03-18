@@ -9,3 +9,14 @@
 2026-03-18 17:52:23 | INFO     | Bot.orders:place_order:38 - Order Response | ID: 12860989568 | Status: NEW | ExecutedQty: 0.000 | AvgPrice: 0.00
 2026-03-18 17:52:36 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: SELL | Type: STOP_MARKET | Qty: 0.1 | Price: None | StopPrice: 50000.0
 2026-03-18 17:52:36 | INFO     | Bot.orders:place_order:38 - Order Response | ID: None | Status: None | ExecutedQty: None | AvgPrice: N/A
+2026-03-18 18:02:18 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: BUY | Type: MARKET | Qty: 0.001 | Price: None | StopPrice: None
+2026-03-18 18:02:19 | ERROR    | Bot.orders:place_order:43 - Binance Error: Status=400, Code=-4164, Message=Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-18 18:02:19 | ERROR    | __main__:trade:72 - CLI Error: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-18 18:16:37 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: BUY | Type: MARKET | Qty: 0.1 | Price: None | StopPrice: None
+2026-03-18 18:16:38 | INFO     | Bot.orders:place_order:38 - Order Response | ID: 12861293057 | Status: NEW | ExecutedQty: 0.000 | AvgPrice: 0.00
+2026-03-18 18:18:13 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: SELL | Type: MARKET | Qty: 0.1 | Price: None | StopPrice: None
+2026-03-18 18:18:14 | INFO     | Bot.orders:place_order:38 - Order Response | ID: 12861311787 | Status: NEW | ExecutedQty: 0.000 | AvgPrice: 0.00
+2026-03-18 18:20:59 | INFO     | Bot.orders:get_futures_balance:54 - Fetching futures account balance
+2026-03-18 18:20:59 | INFO     | Bot.orders:get_futures_balance:59 - Balance Fetched | USDT: 4966.12139554
+2026-03-18 18:21:55 | INFO     | Bot.orders:get_futures_balance:54 - Fetching futures account balance
+2026-03-18 18:21:56 | INFO     | Bot.orders:get_futures_balance:59 - Balance Fetched | USDT: 4966.12139554

@@ -24,6 +24,7 @@ A robust Python CLI tool and Web Dashboard for placing orders on the Binance Fut
 **Backend Setup (using uv):**
 ```bash
 cd Trading-Bot
+uv init
 uv venv
 # On Windows:
 .venv\Scripts\activate
@@ -55,8 +56,6 @@ To run the web interface, you need to start both the backend API and the fronten
 1. **Start Backend API**:
    ```bash
    cd Trading-Bot
-   # Activate venv if not already
-   .venv\Scripts\activate
    # Run the server
    python api.py
    ```

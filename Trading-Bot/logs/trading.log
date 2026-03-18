@@ -1,0 +1,11 @@
+2026-03-18 17:50:14 | ERROR    | __main__:trade:72 - CLI Error: "no spinner called 'pulse'"
+2026-03-18 17:50:32 | ERROR    | __main__:trade:72 - CLI Error: "no spinner called 'pulse'"
+2026-03-18 17:51:30 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: BUY | Type: MARKET | Qty: 0.001 | Price: None | StopPrice: None
+2026-03-18 17:51:30 | ERROR    | Bot.orders:place_order:43 - Binance Error: Status=400, Code=-4164, Message=Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-18 17:51:30 | ERROR    | __main__:trade:72 - CLI Error: APIError(code=-4164): Order's notional must be no smaller than 100 (unless you choose reduce only).
+2026-03-18 17:52:09 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: BUY | Type: MARKET | Qty: 0.1 | Price: None | StopPrice: None
+2026-03-18 17:52:10 | INFO     | Bot.orders:place_order:38 - Order Response | ID: 12860986297 | Status: NEW | ExecutedQty: 0.000 | AvgPrice: 0.00
+2026-03-18 17:52:22 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: SELL | Type: LIMIT | Qty: 0.1 | Price: 150000.0 | StopPrice: None
+2026-03-18 17:52:23 | INFO     | Bot.orders:place_order:38 - Order Response | ID: 12860989568 | Status: NEW | ExecutedQty: 0.000 | AvgPrice: 0.00
+2026-03-18 17:52:36 | INFO     | Bot.orders:place_order:10 - Order Request | Symbol: BTCUSDT | Side: SELL | Type: STOP_MARKET | Qty: 0.1 | Price: None | StopPrice: 50000.0
+2026-03-18 17:52:36 | INFO     | Bot.orders:place_order:38 - Order Response | ID: None | Status: None | ExecutedQty: None | AvgPrice: N/A

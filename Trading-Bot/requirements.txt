@@ -1,0 +1,5 @@
+python-binance
+loguru
+typer
+rich
+python-dotenv

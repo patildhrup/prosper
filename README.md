@@ -20,13 +20,18 @@ A robust Python CLI tool and Web Dashboard for placing orders on the Binance Fut
 - Binance Futures Testnet API Key and Secret Key.
 
 ### 2. Installation
-Install Python dependencies:
+
+**Backend Setup (using uv):**
 ```bash
 cd Trading-Bot
-pip install -r requirements.txt
+uv venv
+# On Windows:
+.venv\Scripts\activate
+# Then install:
+uv pip install -r requirements.txt
 ```
 
-Install Frontend dependencies:
+**Frontend Setup:**
 ```bash
 cd client
 npm install
@@ -50,12 +55,9 @@ To run the web interface, you need to start both the backend API and the fronten
 1. **Start Backend API**:
    ```bash
    cd Trading-Bot
-   uv init
-   uv venv
-   # On Windows:
+   # Activate venv if not already
    .venv\Scripts\activate
-   # Then install and run:
-   uv pip install -r requirements.txt
+   # Run the server
    python api.py
    ```
 2. **Start Frontend Client**:
